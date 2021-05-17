@@ -26,14 +26,23 @@ window.onload = () => {
 
 const previewBox = document.querySelector(".preview-box"),
 previewImg = previewBox.querySelector("img"),
-closeIcon = previewBox.querySelector(".icon");
+categoryName = previewBox.querySelector(".title p"),
+closeIcon = previewBox.querySelector(".icon"),
+shadow = document.querySelector(".shadow");
 
 function preview(element) {
+  document.querySelector("body").style.overflow = "hidden";
   let selectedPrevImg = element.querySelector("img").src;
+  let selectedImgCategory = element.getAttribute("data-name");
+  categoryName.textContent = selectedImgCategory;
   previewImg.src = selectedPrevImg;
   previewBox.classList.add("show");
+  shadow.classList.add("show");
+  
   closeIcon.onclick = () => {
     previewBox.classList.remove("show");
+    shadow.classList.remove("show");
+    document.querySelector("body").style.overflow = "scroll";
   }
 }
 

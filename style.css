@@ -133,6 +133,9 @@ nav .items .item:hover {
   display: none;
   background: rgba(0, 0, 0, 0.4);
 }
+.shadow.show {
+  display: block;
+}
 
 @media (max-width: 1000px) {
   .gallery .image {
